@@ -76,11 +76,18 @@ Create one post
 
 `POST /post`
 
+### Request headers
+Headers | Description
+--- | ---
+Authorization: Bearer `token` | `token`: Session token returned by auth service
+
 ### Parameters
+
 Body params | Description
 --- | ---
 imageUri | (required) URI of post image
 talentId | (required) ID of talent who post the image
+visibility | (optional) Visibility of post. 'public' or 'private'. Default: 'public'
 
 ### Example
 ```
@@ -97,10 +104,58 @@ POST /post
 
 `Status 201, "Post created"`
 
+> Failure
+
+`Status 403`
+
+## Update one post
+---
+
+`PUT /post/{id}`
+
+### Request Headers
+Headers | Description
+--- | ---
+Authorization: Bearer `token` | `token`: Session token returned by auth service
+
+### Parameters
+URL params | Description
+--- | ---
+id | (required) ID of post
+
+Body params | Description
+--- | ---
+visibility | (optional) Visibility of post. 'private' or 'public'
+
+### Example
+```
+PUT /post/4
+
+{
+    "visibility": "private"
+}
+```
+
+### Response
+> Success
+
+`Status 200, "Post updated"`
+
+> Failure
+
+`Status 403`
+
+`Status 404, "Post not found"`
+
 ## Delete one post
 ---
 
 `DELETE /post/{id}`
+
+### Request headers
+Headers | Description
+--- | ---
+Authorization: Bearer `token` | `token`: Session token returned by auth service
 
 ### Parameters
 URL params | Description
@@ -116,5 +171,7 @@ id | (required) ID of post
 `Status 200, "Post deleted"`
 
 > Failure
+
+`Status 403`
 
 `Status 404, "Post not found"`

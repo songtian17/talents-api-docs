@@ -145,6 +145,11 @@ Update one existing talent
 
 `PUT /talent/{id}`
 
+### Request headers
+Headers | Description
+--- | ---
+Authorization: Bearer `token` | `token`: Session token returned by auth service
+
 ### Parameters
 URL params | Description
 --- | ---
@@ -175,6 +180,8 @@ POST /talent/1
 `Status 200, "Talent updated"`
 
 > Failure
+
+`Status 403`
 
 `Status 404, "Talent not found"`
 

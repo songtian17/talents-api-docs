@@ -45,6 +45,11 @@ Create new comment
 
 `POST /comment/{id}`
 
+### Request headers
+Headers | Description
+--- | ---
+Authorization: Bearer `token` | `token`: Session token returned by auth service
+
 ### Parameters
 URL params | Description
 --- | ---
@@ -68,3 +73,7 @@ POST /comment/4
 > Success
 
 `Status 201, "Comment created"`
+
+> Failure
+
+`Status 403`
