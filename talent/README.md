@@ -116,6 +116,7 @@ POST /talent
 ### Parameters
 Body params | Description
 ---|---
+accountId | (required) ID of account linked to talent
 name | (required) Name of talent
 username | (required) Username of talent
 profileImageUri | (optional) URI of profile picture
@@ -127,6 +128,7 @@ bio | (optional) Bio of talent
 POST /talent
 
 {
+    "accountId": "1",
     "name": "Mason Dale",
     "username": "MasonD",
     "profileImageUri": "https://via.placeholder.com/600/92c952",
