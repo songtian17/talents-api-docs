@@ -163,6 +163,7 @@ name | (optional) Name of talent
 username | (optional) Username of talent
 profileImageUri | (optional) URI of profile picture
 bio | (optional) Bio of talent
+isSubscribed | (options) If talent is allowed to search. true or false
 
 ### Example
 ```
